@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.example.androiddevchallenge
+package com.f1reking.androiddevchallenge.timer
 
 import android.os.Bundle
 import androidx.activity.compose.setContent
@@ -23,7 +23,14 @@ import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.androiddevchallenge.ui.theme.MyTheme
+import androidx.navigation.NavType
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.navArgument
+import androidx.navigation.compose.rememberNavController
+import com.f1reking.androiddevchallenge.timer.components.TimerScreen
+import com.f1reking.androiddevchallenge.timer.navigation.Navigation
+import com.f1reking.androiddevchallenge.timer.ui.theme.MyTheme
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,8 +46,17 @@ class MainActivity : AppCompatActivity() {
 // Start building your app here!
 @Composable
 fun MyApp() {
-    Surface(color = MaterialTheme.colors.background) {
-        Text(text = "Ready... Set... GO!")
+    NavGraph()
+}
+
+@Composable
+fun NavGraph() {
+    val navController = rememberNavController()
+
+    NavHost(navController = navController, startDestination = Navigation.NAV_TIMER_SCREEN) {
+        composable(route = Navigation.NAV_TIMER_SCREEN) {
+            TimerScreen()
+        }
     }
 }
 
