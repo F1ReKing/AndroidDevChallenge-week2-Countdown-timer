@@ -23,3 +23,8 @@ val purple700 = Color(0xFF3700B3)
 val teal200 = Color(0xFF03DAC5)
 
 val white = Color(0xFFFFFFFF)
+val bgColor = Color(0xFF333438)
+val bgCircle = Color(0xFF2a2b2f)
+val circle = Color(0xFF68f155)
+val green = Color(0xFF4CAF50)
+val red = Color(0xFFD51111)
