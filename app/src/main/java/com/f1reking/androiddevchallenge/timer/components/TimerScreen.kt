@@ -1,3 +1,18 @@
+/*
+ * Copyright 2021 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package com.f1reking.androiddevchallenge.timer.components
 
 import androidx.compose.foundation.Canvas
@@ -66,13 +81,15 @@ fun TimerScreen(coroutineScope: CoroutineScope) {
             Modifier
                 .height(80.dp)
                 .fillMaxWidth()
-                .padding(50.dp, 50.dp, 50.dp, 120.dp), 362F, bgCircle
+                .padding(50.dp, 50.dp, 50.dp, 120.dp),
+            362F, bgCircle
         )
         AnimatedCircle(
             Modifier
                 .height(80.dp)
                 .fillMaxWidth()
-                .padding(50.dp, 50.dp, 50.dp, 120.dp), progress, circle
+                .padding(50.dp, 50.dp, 50.dp, 120.dp),
+            progress, circle
         )
 
         Column(
@@ -92,11 +109,7 @@ fun TimerScreen(coroutineScope: CoroutineScope) {
                 ShowStopButton()
             }
         }
-
-
     }
-
-
 }
 
 @Composable
@@ -168,7 +181,6 @@ fun ShowStopButton() {
     }
 }
 
-
 private const val StrokeLength = 1.8f
 
 @Composable
@@ -210,4 +222,3 @@ fun TimerPreview() {
     val coroutineScope = rememberCoroutineScope()
     TimerScreen(coroutineScope)
 }
-
